@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		
 		var number_0 = document.createTextNode(0);
 		var operators = ["+","-","*","/"];
-		var number_result = document.createTextNode('=');
+		var number_result = document.createTextNode('C');
 		
 		if ( i == 10 ) {
 			for ( j = 0; j < operators.length; j++ ) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
 		}
 		else if ( i == 12 ) {
 			btn_number.appendChild(number_result);
-			calculatorResult();
+			deleteScreen();
 		}
 		else {
 			var number = document.createTextNode(i);
@@ -81,7 +81,23 @@ document.addEventListener('DOMContentLoaded', function() {
 				isResult = 1;
 			});
 		}
+		
+		function deleteScreen() {
+			btn_number.addEventListener("click", function() {
+				display_screen.innerHTML = "";
+			});
+		}
 	}
+	
+	var btn_result = document.createElement('div');
+	btn_result.id = 'result';
+	btn_result.appendChild(document.createTextNode("="));
+	btn_result.addEventListener("click", function() {
+		display_screen.innerHTML = eval(display_screen.innerHTML.replace(/\d+/g, function(numb){ 
+                	return parseInt(numb, 10);
+            	}));
+	});
+	document.getElementById("wrapper").appendChild(btn_result);
 	
 });
 

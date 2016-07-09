@@ -8,7 +8,7 @@
 
 #wrapper {
 	width:306px;
-	height:560px;
+	height:610px;
 	margin:auto auto;
 	background: linear-gradient(135deg, #462435, #743749, #B22C45, #CB3A35, #E8592A);
 	color:#FFF;
@@ -18,9 +18,8 @@
 
 	#wrapper #display {
 		float:left;
-		width:304px;
-		height:150px;
-		border:0.5px solid #462435;
+		width:306px;
+		height:160px;
 		line-height:150px;
 		text-align:right;
 		font-size:38px;
@@ -29,9 +28,8 @@
 
 	#wrapper #button-number {
 		float:left;
-		width:100px;
+		width:102px;
 		height:100px;
-		border: 1px solid #743749;
 		line-height:100px;
 		text-align:center;
 		cursor:pointer;
@@ -40,4 +38,20 @@
 	
 		#wrapper #button-number:hover {
 			background:	#462435;
+		}
+		
+	#wrapper #result {
+		float:left;
+		width:306px;
+		height:50px;
+		color:#FFF;
+		font-size:38px;
+		text-align:center;
+		line-height:50px;	
+		transition: 0.25s linear;
+	}
+	
+		#wrapper #result:hover {
+			background: #462435;
+			cursor:pointer;	
 		}
